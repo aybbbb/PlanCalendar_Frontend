@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import store from './store';
+import Wrapper from './pages/Wrapper/Wrapper';
+import TodoList from './pages/calendarTodoList';
+import Login from './pages/login/index';
+import JoinComponent from './pages/join/JoinComponent';
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <GoogleOAuthProvider clientId={googleAccount}> */}
+      <Provider store={store}>
+        <BrowserRouter>
+          <Wrapper>
+            <Routes>
+              <Route path="/todoList" element={<TodoList />} />
+              <Route path="/" element={<Login setUserInfo={setUserInfo} setIsLogin={setIsLogin} />}></Route>
+              <Route path="/join" element={<JoinComponent />}></Route>
+            </Routes>
+          </Wrapper>
+        </BrowserRouter>
+      </Provider>
+      {/* </GoogleOAuthProvider> */}
+    </>
   );
 }
 
