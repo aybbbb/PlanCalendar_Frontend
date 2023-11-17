@@ -19,8 +19,9 @@ function App() {
         <BrowserRouter>
           <Wrapper>
             <Routes>
-              <Route path="/todoList" element={<TodoList />} />
               <Route path="/" element={<Login setUserInfo={setUserInfo} setIsLogin={setIsLogin} />}></Route>
+
+              <Route path="/todoList" element={<TodoList />} />
               <Route path="/join" element={<JoinComponent />}></Route>
             </Routes>
           </Wrapper>

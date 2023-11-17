@@ -12,14 +12,14 @@ const initialState = {
   selectYMD: yy + '-' + mm + '-' + dd,
   schedule: [
     {
-      ymd: '2022-12-05',
+      ymd: '2023-02-07',
       plan: [
         { index: 1, text: 'ㄷㄷㄷ', done: true },
         { index: 2, text: 'ㄷㄷㄷ1', done: false },
         { index: 3, text: 'ㄷㄷㄷ2', done: false },
       ],
     },
-    { ymd: '2022-12-08', plan: [{ index: 6, text: 'ㄷㄷㄷ1', done: true }] },
+    { ymd: '2023-02-08', plan: [{ index: 6, text: 'ㄷㄷㄷ1', done: true }] },
   ],
 };
 

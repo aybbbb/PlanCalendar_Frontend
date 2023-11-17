@@ -27,8 +27,8 @@ const FontBlock = styled.p`
 `;
 
 function index() {
-  const [isLogin, setIsLogin] = useState(false);
-  const [userInfo, setUserInfo] = useState({});
+  // const [isLogin, setIsLogin] = useState(false);
+  // const [userInfo, setUserInfo] = useState({});
   return (
     <>
       <LoginBlock>
@@ -37,7 +37,14 @@ function index() {
         <FontBlock>
           간편로그인 또는 <Link to="/join">회원가입</Link>
         </FontBlock>
-        <GoogleLoginComponent setUserInfo={setUserInfo} setIsLogin={setIsLogin} />
+        <div>
+          <button>
+            <GoogleLoginComponent />
+          </button>
+        </div>
+        <div>네이버 로그인 구현하기</div>
+
+        <div>카카오 로그인 구현하기</div>
       </LoginBlock>
     </>
   );
